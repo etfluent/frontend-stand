@@ -1,6 +1,6 @@
 <div class="text-center"><h1>Super Basic Front End Template</h1>
 
-<h3>Currently a W.I.P., but feel free to check it out</h3>
+<h3>Currently a W.I.P. but feel free to check it out</h3>
 <br>
 <br>
 <p>The idea of this template is to implement a super simple "scaffolding" for one page sites with common modules predefined just enough to allow highly customizable content.</p>
