@@ -1,0 +1,254 @@
+/*
+style.css
+Version: 1.0.1
+Description: Style sheet for site_name
+Author: Michael Culpepper Mike@prejeancreative.com
+*/
+
+/* Browser Reset */
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+font,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	background: transparent;
+	font-size: 100%;
+	vertical-align: baseline;
+}
+
+/* general body styles */
+body{
+    line-height: 1;
+    color: black;
+    background-color: white;
+    font-size: 16px;
+    font-family: Helvetica;
+    width: 100%;
+    margin: 0px !important;
+}
+
+/* header 1 */
+h1{
+  margin: 0px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+    color: black;
+    text-align: center;
+}
+
+/* page section */
+.section{
+    overflow: hidden;
+    width: 100%;
+    background-color: white;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    -webkit-box-shadow: inset 0px 0px 20px 2px rgba(173,173,173,1);
+    -moz-box-shadow: inset 0px 0px 20px 2px rgba(173,173,173,1);
+    box-shadow: inset 0px 0px 20px 2px rgba(173,173,173,1);
+}
+
+/* page fullwidth section */
+.fullwidth-section{
+    width: 100%;
+    text-align: center;
+    background-color: white;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    -webkit-box-shadow: inset 0px 0px 20px 2px rgba(173,173,173,1);
+    -moz-box-shadow: inset 0px 0px 20px 2px rgba(173,173,173,1);
+    box-shadow: inset 0px 0px 20px 2px rgba(173,173,173,1);
+}
+
+/* fullwidth image section */
+ .fullwidth-image-section {
+    font-size: 0px;
+    width: 100%;
+    text-align: center;
+    background-color: white;
+ }
+
+/* half page section */
+.half-section{
+    text-align: center;
+    width: 43.6%;
+    padding-left: 2.7%;
+    padding-right: 2.7%;
+    float: left;
+}
+
+/* fullwidth image */
+.fullwidth-image {
+    width: 100%;
+    height: auto;
+}
+
+/* basic animation code */
+.animated-bsc {
+    position: absolute;;
+    animation: move 20s linear 2s infinite alternate;
+}
+.animated-ele {
+    height: 100px;
+    width: 100px;
+    background-color: red;
+}
+@keyframes move{
+    0%    {left: 0px; top:46px;}
+		25%		{left: calc(100% - 100px); top: 46px;}
+		50%		{left: calc(100% - 100px); top: calc(100% - 100px);}
+		75%		{left: 0px; top: calc(100% - 100px);}
+		100%	{left: 0px; top: 46px;}
+}
+
+/* basic slider and slide images */
+#slider {
+    height: 600px;
+    width: 100%;
+}
+.slide-img {
+    visibility: hidden;
+    position: absolute;
+}
+.p-arrow{
+    content: '<';
+    font-size: 46px;
+    font-family: Helvetica;
+    color: black;
+    position: relative;
+    right: calc(50% - 30px);
+    top: calc(50% - 53px);
+		cursor: pointer;
+}
+.n-arrow{
+    content: '>';
+    font-size: 46px;
+    font-family: Helvetica;
+    color: black;
+    position: relative;
+    left: calc(50% - 30px);
+    top: calc(50% - 53px);
+		cursor: pointer;
+}
+
+/* parralax area */
+.parallax [class*="bg__"] {
+  position: relative;
+  height: 50vh;
+  text-indent: -9999px;
+  background-attachment: fixed;
+  background-position: top center;
+  background-size: cover;
+}
+.parallax [class*="bg__"]:nth-child(2n) {
+  box-shadow: inset 0 0 1em #111;
+}
+.parallax .bg__foo, .parallax .bg__bazz {
+  height: 100vh;
+}
+.parallax .bg__foo {
+  background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/30354/parallax1.jpg);
+}
+.parallax .bg__bar {
+  background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/30354/parallax2.jpg);
+}
+.parallax .bg__baz {
+  background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/30354/parallax3.jpg);
+}
+.parallax .bg__bazz {
+  background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/30354/parallax1.jpg);
+}
+.parallax .bg__break {
+  box-shadow: inset 0 0 1em #111;
+  background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/30354/parallax1.jpg);
+}
+.parallax .capture {
+  float: right;
+  width: 200px;
+  padding: 1em;
+  margin: -1.5em 1em 0 0;
+  text-indent: 0;
+  background: rgba(243, 243, 243, 0.75);
+  box-shadow: 0 1px 0.125em #333;
+}
+
+/* background video */
+video.background-video {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -100;
+    -ms-transform: translateX(-50%) translateY(-50%);
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+    background: url(polina.jpg) no-repeat;
+    background-size: cover;
+}
+
+/* background video  mobile styles*/
+@media screen and (max-device-width: 800px) {
+    html {
+         background: url(polina.jpg) #000 no-repeat center center fixed;
+    }
+    .background-video {
+        display: none;
+    }
+}
