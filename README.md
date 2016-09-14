@@ -1,5 +1,3 @@
-# frontend-stand
-
 <div class="text-center"><h1>Super Basic Front End Template</h1>
 
 <h3>Currently a W.I.P., but feel free to check it out</h3>
