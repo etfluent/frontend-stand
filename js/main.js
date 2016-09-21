@@ -1,7 +1,7 @@
 // js file for site_name
 
 // slider code
-  var init = "yes";
+  var setTO;
   var counter = 1;
   var numSlides = $('#slider').children().length;
   var currentele = $('#i'+parseInt(counter));
@@ -9,8 +9,16 @@
   var elWidthHalfStr = parseInt(elWidth/2);
   var elHeight = currentele.height();
   var elHeightHalfStr = parseInt(elHeight/2);
+  var vertMov = ($('#slider').height() - elHeight)/2;
   console.log(numSlides);
-  
+  function sliderFuse (){
+    setTO = setTimeout(
+      function() {
+        nArrow();
+        sliderFuse();
+        // number below is time between slide change
+      }, 5000);
+  }
 
 function nArrow() {
     currentele.css("visibility", "hidden");
@@ -21,8 +29,11 @@ function nArrow() {
     currentele = $('#i'+parseInt(counter));
     var elWidth = currentele.width();
     var elWidthHalfStr = parseInt(elWidth/2);
+    var elHeight = currentele.height();
+    var vertMov = ($('#slider').height() - elHeight)/2;
     currentele.css("visibility", "visible");
     currentele.css("left", "-"+elWidthHalfStr+"px");
+    currentele.css("margin-top", parseInt(vertMov)+"px");
     currentele.css("margin-left", "50%");
 }
 
@@ -35,8 +46,11 @@ function pArrow() {
     currentele = $('#i'+parseInt(counter));
     var elWidth = currentele.width();
     var elWidthHalfStr = parseInt(elWidth/2);
+    var elHeight = currentele.height();
+    var vertMov = ($('#slider').height() - elHeight)/2;
     currentele.css("visibility", "visible");
     currentele.css("left", "-"+elWidthHalfStr+"px");
+    currentele.css("margin-top", parseInt(vertMov)+"px");
     currentele.css("margin-left", "50%");
 }
 // end slider code
@@ -47,14 +61,11 @@ $( document ).ready(function() {
   $('<span class="p-arrow"><</span>').appendTo('#slider').click(pArrow);
   $('.first-slide').css("visibility", "visible");
   currentele.css("left", "-"+elWidthHalfStr+"px");
+  currentele.css("margin-top", parseInt(vertMov)+"px");
   currentele.css("margin-left", "50%");
-  function sliderFuse (){
-    setTimeout(
-      function() {
-        nArrow();
-        sliderFuse();
-        // number below is time between slide change
-      }, 5000);
-    }
   sliderFuse();
+  $('#slider').hover(function() {
+    clearTimeout(setTO);
+  });
+  
 });
