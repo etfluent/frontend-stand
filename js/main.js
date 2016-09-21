@@ -1,6 +1,7 @@
 // js file for site_name
 
 // slider code
+  var init = "yes";
   var counter = 1;
   var numSlides = $('#slider').children().length;
   var currentele = $('#i'+parseInt(counter));
@@ -9,6 +10,7 @@
   var elHeight = currentele.height();
   var elHeightHalfStr = parseInt(elHeight/2);
   console.log(numSlides);
+  
 
 function nArrow() {
     currentele.css("visibility", "hidden");
@@ -46,4 +48,13 @@ $( document ).ready(function() {
   $('.first-slide').css("visibility", "visible");
   currentele.css("left", "-"+elWidthHalfStr+"px");
   currentele.css("margin-left", "50%");
+  function sliderFuse (){
+    setTimeout(
+      function() {
+        nArrow();
+        sliderFuse();
+        // number below is time between slide change
+      }, 5000);
+    }
+  sliderFuse();
 });
